@@ -13,7 +13,7 @@ contract Box is Ownable {
         s_value = initialValue;
     }
 
-    function updateValue(uint256 newValue) external {
+    function updateValue(uint256 newValue) external onlyOwner {
         s_value = newValue;
         emit ValueChanged(newValue);
     }
